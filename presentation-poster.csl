@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
+  
+<!-- Style Info -->
+
+  <info>
+    <title>Presentation and Poster</title>
+    <title-short>Presentation/Poster</title-short>
+    <id>Presentation_Poster</id>
+    <author>
+      <name>Fabian Stoll</name>
+      <email>fabianstoll@outlook.com</email>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="science"/>
+    <category field="generic-base"/>
+    <updated>2025-04-17T22:00:00+00:00</updated>
+  </info>
+  
+<!-- Macros -->
+
+  <macro name="author">
+    <names variable="author">
+      <name sort-separator=", " delimiter=", " and="symbol" initialize-with=". " delimiter-precedes-last="never" name-as-sort-order="all"/>
+      <label form="short" prefix=", "/>
+    </names>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued" prefix="(" suffix=")">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="journal">
+    <choose>
+      <if type="article-journal">
+        <text variable="container-title" font-style="italic" form="short"/>
+      </if>
+      <else>
+        <text variable="container-title" font-style="italic"/>
+      </else>
+    </choose>
+  </macro>
+
+<!-- Citation -->
+
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout vertical-align="sup" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  
+<!-- Bibliography -->
+
+<bibliography et-al-min="2" et-al-use-first="1" second-field-align="flush" entry-spacing="0" line-spacing="2">
+    <layout>
+      <text variable="citation-number" prefix="["  suffix="]"/>
+      <group delimiter=" ">
+        <text macro="author" suffix="."/>
+        <text macro="journal" suffix=""/>
+        <text macro="year"/>
+      </group>
+    </layout>
+  </bibliography>
+
+</style>
